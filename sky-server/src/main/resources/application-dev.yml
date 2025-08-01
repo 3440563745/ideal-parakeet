@@ -11,3 +11,8 @@ sky:
    access-key-id: LTAI5tFBsDpbiTTG7uUuKPSV
    access-key-secret: moWYOCM5OuUtbnz3ZkUYypENxWbbLN
    bucket-name: cqwmxzj
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
