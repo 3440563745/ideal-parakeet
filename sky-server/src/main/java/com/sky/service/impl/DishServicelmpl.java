@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.reactive.TransactionalOperator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -115,5 +116,19 @@ public class DishServicelmpl implements DishService {
             flavors.forEach(dishFlavor -> dishFlavor.setDishId(dishDTO.getId()));
             dishFlavorMapper.insertBatch(flavors);
         }
+    }
+
+    @Override
+    public List<DishVO> listWithFlavor(Dish dish) {
+        List<Dish> listDish=dishMapper.list(dish);
+        List<DishVO> dishVOList=new ArrayList<>();
+             for(Dish d:listDish){
+                 DishVO dishVO=new DishVO();
+                 BeanUtils.copyProperties(d,dishVO);
+                 List<DishFlavor> flavors=dishFlavorMapper.getByDishId(d.getId());
+                 dishVO.setFlavors(flavors);
+                 dishVOList.add(dishVO);
+             }
+             return dishVOList;
     }
 }
