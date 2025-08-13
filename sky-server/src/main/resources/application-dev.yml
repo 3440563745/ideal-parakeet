@@ -16,7 +16,7 @@ sky:
     port: 6379
     password: 123456
     database: 0
-  wechat:
-    appid: wx479ae944cc2d79be
-    secret: 1f65547f0c13f2379d3cd9e390d2357f
-    mch_id: 1600000119
+#  wechat:
+#    appid: wx479ae944cc2d79be
+#    secret: 1f65547f0c13f2379d3cd9e390d2357f
+#    mch_id: 1600000119
