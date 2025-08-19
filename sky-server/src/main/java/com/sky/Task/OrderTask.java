@@ -16,6 +16,7 @@ import java.util.List;
 public class OrderTask {
     @Autowired
     private OrderMapper orderMapper;
+
     @Scheduled(cron = "0 * * * * ?")
 //@Scheduled(cron = "1/5 * * * * ?")
 public void processTimeoutOrder(){
